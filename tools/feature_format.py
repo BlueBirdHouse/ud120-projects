@@ -5,7 +5,9 @@
     dictionary format to an (n x k) python list that's 
     ready for training an sklearn algorithm
 
-    n--no. of key-value pairs in dictonary
+    从字典类型转换为list
+
+    n--no. of key-value pairs in dictonary 
     k--no. of features being extracted
 
     dictionary keys are names of persons in dataset
@@ -67,7 +69,7 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
             try:
                 dictionary[key][feature]
             except KeyError:
-                print "error: key ", feature, " not present"
+                print("error: key "+ feature+ " not present")
                 return
             value = dictionary[key][feature]
             if value=="NaN" and remove_NaN:
